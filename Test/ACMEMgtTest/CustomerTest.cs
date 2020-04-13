@@ -7,6 +7,8 @@ namespace ACMEMgtTest
 	[TestClass]
 	public class CustomerTest
 	{
+		private const bool V = true;
+
 		[TestMethod]
 		public void FullNameTestValid()
 		{
@@ -55,6 +57,44 @@ namespace ACMEMgtTest
 
 			//Act
 			string actual = customer.FullName;
+
+			//Assert
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void ValidateValid()
+		{
+			// arrange
+			Customer customer = new Customer
+			{
+				LastName = "Yusuf",
+				EmailAddress = "Aje@Gmail.com"
+			};
+
+			var expected = true;
+
+			//Act
+			var actual = customer.Validate();
+
+			//Assert
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void ValidateMissingLastname()
+		{
+			// arrange
+			Customer customer = new Customer
+			{
+				
+				EmailAddress = "Aje@Gmail.com"
+			};
+
+			var expected = false;
+
+			//Act
+			var actual = customer.Validate();
 
 			//Assert
 			Assert.AreEqual(expected, actual);
