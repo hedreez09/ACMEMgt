@@ -11,16 +11,16 @@ namespace ACMEMgt
 		public DateTime OrderDate { get; set; }
 
 		//To retrieve one product 
-		public OrderDate Retrieve(int productId)
+		public Order Retrieve(int productId)
 		{
 			//code that retrieve the specified product
-			return new OrderDate();
+			return new Order();
 		}
 		//To retrieve all product
-		public List<OrderDate> Retrieve()
+		public List<Order> Retrieve()
 		{
 			//code that retrieve all product
-			return new List<OrderDate>();
+			return new List<Order>();
 		}
 
 		//To Save the current prodcut

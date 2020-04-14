@@ -8,9 +8,21 @@ namespace ACMEMgt
 {
 	public class Product
 	{
+		public Product()
+		{
+
+		}
+		public Product(int productId)
+		{
+			ProductId = productId;
+		}
+
+		
 		public string ProductName { get; set; }
+		public int ProductId { get; private set; }
 		public string Description { get; set; }
-		public string CurrentPrice { get; set; }
+		public Decimal? CurrentPrice { get; set; }
+		
 
 
 		//To retrieve one product 
@@ -39,7 +51,7 @@ namespace ACMEMgt
 			var isValid = true;
 			if (string.IsNullOrWhiteSpace(ProductName)) isValid = false;
 			if (string.IsNullOrWhiteSpace(Description)) isValid = false;
-			if (string.IsNullOrWhiteSpace(CurrentPrice)) isValid  = false
+			//if (string.IsNullOrWhiteSpace(CurrentPrice)) isValid = false;
 
 			return isValid;
 		}
