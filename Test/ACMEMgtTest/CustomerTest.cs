@@ -7,7 +7,7 @@ namespace ACMEMgtTest
 	[TestClass]
 	public class CustomerTest
 	{
-		private const bool V = true;
+		
 
 		[TestMethod]
 		public void FullNameTestValid()

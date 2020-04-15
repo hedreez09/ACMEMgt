@@ -8,7 +8,16 @@ namespace ACMEMgt
 {
 	public class Order
 	{
-		public DateTime OrderDate { get; set; }
+		public Order()
+		{
+
+		}
+		public Order(int orderId)
+		{
+			OrderId = orderId;
+		}
+		public int OrderId { get; private set; }
+		public DateTimeOffset? OrderDate { get; set; }
 
 		//To retrieve one product 
 		public Order Retrieve(int productId)
@@ -16,6 +25,8 @@ namespace ACMEMgt
 			//code that retrieve the specified product
 			return new Order();
 		}
+
+
 		//To retrieve all product
 		public List<Order> Retrieve()
 		{
@@ -33,9 +44,11 @@ namespace ACMEMgt
 		//To validate that the specified field are required and not null
 		public bool Validate()
 		{
+			var inValid = true;
 
+			if (OrderDate == null) inValid = false;
 
-			return true;
+			return inValid;
 		}
 	}
 }

@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ACMEMgt
+{
+	public class CustomerRepository
+	{
+		public Customer Retrieve( int customerId)
+		{
+			//Create an instance of the customer class 
+			//pass in the requested Id
+			Customer customer = new Customer(customerId);
+
+			//Code hat retrieve precise customer
+			//a populated customer
+			if(customerId == 1)
+			{
+				customer.EmailAddress = "Iwonu@gmail.com";
+				customer.FirstName = "Wonuola";
+				customer.LastName = "Idris";
+			}
+			return customer;
+		}
+
+		//Save  the current customer
+		public bool Save(Customer customer)
+		{
+			//code that save passed customer
+
+			return true;
+		}
+		
+
+	}
+}

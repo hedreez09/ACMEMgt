@@ -20,7 +20,7 @@ namespace ACMEMgt
 		
 		public string ProductName { get; set; }
 		public int ProductId { get; private set; }
-		public string Description { get; set; }
+		public string ProductDescription { get; set; }
 		public Decimal? CurrentPrice { get; set; }
 		
 
@@ -50,8 +50,7 @@ namespace ACMEMgt
 		{
 			var isValid = true;
 			if (string.IsNullOrWhiteSpace(ProductName)) isValid = false;
-			if (string.IsNullOrWhiteSpace(Description)) isValid = false;
-			//if (string.IsNullOrWhiteSpace(CurrentPrice)) isValid = false;
+			if (CurrentPrice == null) isValid = false;
 
 			return isValid;
 		}
