@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ACMEMgtTest
 {
-	[TestClass]
+	[Microsoft.VisualStudio.TestTools.UnitTesting.TestClass]
 	public class ProductTest
 	{
 		[TestMethod]

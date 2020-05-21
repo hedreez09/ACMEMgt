@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ACMEMgtTest
 {
-	[TestClass]
+	[Microsoft.VisualStudio.TestTools.UnitTesting.TestClass]
 	public class CustomerTest
 	{
 		

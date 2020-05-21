@@ -8,10 +8,10 @@ namespace ACMEMgtTest
 	public class CustomerRepositoryTest
 	{
 		[TestMethod]
-		public void TestMethod1()
+		public void RetrieveValid()
 		{
 			//Arrange
-			var customerRepository = new ACMEMgt.CustomerRepository();
+			var customerRepository = new CustomerRepository();
 			var expected = new Customer(1)
 			{
 				EmailAddress = "Iwonu@gmail.com",
