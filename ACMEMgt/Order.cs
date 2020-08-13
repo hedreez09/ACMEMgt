@@ -8,16 +8,20 @@ namespace ACMEMgt
 {
 	public class Order
 	{
-		public Order()
+		public Order():this(0)
 		{
 
 		}
 		public Order(int orderId)
 		{
 			OrderId = orderId;
+			OrderItems = new List<OrderItem>();
 		}
+		public int CustomerId { get; set; }
 		public int OrderId { get; private set; }
 		public DateTimeOffset? OrderDate { get; set; }
+		public List<OrderItem> OrderItems { get; set; } //relationship btw order and orderItems
+		public int ShippingAddressId { get; set; }
 
 		//To retrieve one product 
 		public Order Retrieve(int productId)

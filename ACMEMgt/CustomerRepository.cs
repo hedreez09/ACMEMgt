@@ -8,6 +8,12 @@ namespace ACMEMgt
 {
 	public class CustomerRepository
 	{
+		private AddressRepository addressRepository { get; set; }
+
+		public CustomerRepository()
+		{
+			addressRepository = new AddressRepository(); //a collaborative relations
+		}
 		public Customer Retrieve( int customerId)
 		{
 			//Create an instance of the customer class 
@@ -21,6 +27,7 @@ namespace ACMEMgt
 				customer.EmailAddress = "Iwonu@gmail.com";
 				customer.FirstName = "Wonuola";
 				customer.LastName = "Idris";
+				customer.AddressList = addressRepository.RetrieveByCustomerId(customerId).ToList();
 			}
 			return customer;
 		}
