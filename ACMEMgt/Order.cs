@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ACMEMgt
 {
-    public class Order
+    public class Order : EntityBase
     {
         public Order() : this(0)
         {
@@ -23,12 +23,7 @@ namespace ACMEMgt
 
         public override string ToString() => $"{OrderDate}({OrderId})";
 
-        //To retrieve one product
-        public Order Retrieve(int productId)
-        {
-            //code that retrieve the specified product
-            return new Order();
-        }
+       
 
         //To retrieve all product
         public List<Order> Retrieve()
@@ -37,15 +32,10 @@ namespace ACMEMgt
             return new List<Order>();
         }
 
-        //To Save the current prodcut
-        public bool Save()
-        {
-            //Code that save the defiened product
-            return true;
-        }
+      
 
         //To validate that the specified field are required and not null
-        public bool Validate()
+        public override bool Validate()
         {
             var inValid = true;
 

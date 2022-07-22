@@ -32,9 +32,27 @@ namespace ACMEMgt
         //Save  the current customer
         public bool Save(Customer customer)
         {
-            //code that save passed customer
+           var  SUCCESS = true;
+            if (customer.HasChanges)
+            {
+                if (customer.IsValid)
+                {
+                    if (customer.IsNew)
+                    {
+                        // call an insert stored procedure
+                    }
+                    else
+                    {
+                        //call an update stored procedure
+                    }
+                }
+                else
+                {
+                    SUCCESS = false;
+                }
+            }
 
-            return true;
+            return SUCCESS;
         }
     }
 }

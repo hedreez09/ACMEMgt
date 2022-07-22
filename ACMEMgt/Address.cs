@@ -1,6 +1,6 @@
 ﻿namespace ACMEMgt
 {
-    public class Address
+    public class Address: EntityBase
     {
         public Address()
         {
@@ -21,7 +21,7 @@
         public string StreetLine2 { get; set; }
 
         //Validate address data
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 

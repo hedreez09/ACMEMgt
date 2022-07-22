@@ -15,5 +15,33 @@ namespace ACMEMgt
             }
             return order;
         }
+
+       
+
+        //To Save the current prodcut
+        public bool Save()
+        {
+            var SUCCESS = true;
+            //if (order.HasChanges)
+            //{
+            //    if (order.IsValid)
+            //    {
+            //        if (order.IsNew)
+            //        {
+            //            // call an insert stored procedure
+            //        }
+            //        else
+            //        {
+            //            //call an update stored procedure
+            //        }
+            //    }
+            //    else
+            //    {
+            //        SUCCESS = false;
+            //    }
+            //}
+
+            return SUCCESS;
+        }
     }
 }

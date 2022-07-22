@@ -55,8 +55,27 @@ namespace ACMEMgt
 
         public bool Save(Address address)
         {
-            //code that saves the passed in addresss
-            return true;
+            var SUCCESS = true;
+            if (address.HasChanges)
+            {
+                if (address.IsValid)
+                {
+                    if (address.IsNew)
+                    {
+                        // call an insert stored procedure
+                    }
+                    else
+                    {
+                        //call an update stored procedure
+                    }
+                }
+                else
+                {
+                    SUCCESS = false;
+                }
+            }
+
+            return SUCCESS;
         }
     }
 }

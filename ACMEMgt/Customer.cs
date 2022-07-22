@@ -2,7 +2,7 @@
 
 namespace ACMEMgt
 {
-    public class Customer
+    public class Customer: EntityBase
     {
         public Customer() : this(0)
         {
@@ -41,7 +41,7 @@ namespace ACMEMgt
         public override string ToString() => FullName;
 
         //To validate that the specified field are required and not null
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
             if (string.IsNullOrWhiteSpace(LastName)) isValid = false;

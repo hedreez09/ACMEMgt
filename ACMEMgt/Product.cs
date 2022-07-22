@@ -2,7 +2,7 @@
 
 namespace ACMEMgt
 {
-    public class Product
+    public class Product : EntityBase
     {
         public Product()
         {
@@ -22,7 +22,7 @@ namespace ACMEMgt
         public override string ToString() => ProductName;
 
         //To validate that the specified field are required and not null
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
             if (string.IsNullOrWhiteSpace(ProductName)) isValid = false;

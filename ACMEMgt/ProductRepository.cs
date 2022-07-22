@@ -20,17 +20,33 @@ namespace ACMEMgt
             }
 
             Object myObject = new object();
-            Console.WriteLine($"Object : {myObject.ToString()}");
-            Console.WriteLine($"Product : {product.ToString()}");
+            Console.WriteLine($"Object : {myObject}");
+            Console.WriteLine($"Product : {product}");
             return product;
         }
 
         //Save  the current product
         public bool Save(Product product)
         {
-            //code that save passed product
+            var SUCCESS = true;
+            if(product.HasChanges)
+            {
+                if (product.IsValid)
+                {
+                    if (product.IsNew)
+                    {
+                        // call an insert stored procedure
+                    }
+                    else
+                    {
+                        //call an update stored procedure
+                    }
+                }
+                else { SUCCESS = false; }
+            }
 
-            return true;
+            return SUCCESS;
         }
+
     }
 }
