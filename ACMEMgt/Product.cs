@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ACME.Common1;
+using System;
 
 namespace ACMEMgt
 {
@@ -10,13 +11,29 @@ namespace ACMEMgt
 
         public Product(int productId)
         {
+            
             ProductId = productId;
         }
 
-        public string ProductName { get; set; }
+        
         public int ProductId { get; private set; }
         public string ProductDescription { get; set; }
         public Decimal? CurrentPrice { get; set; }
+
+        private string _productName;
+
+        public string ProductName 
+        { 
+            get 
+            {
+                return StringHandler.InsertSpaces(_productName); 
+            }
+            set 
+            { 
+                _productName = value;
+            }
+
+        }
 
         //using expression body
         public override string ToString() => ProductName;
