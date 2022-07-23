@@ -15,7 +15,7 @@ namespace ACME.CommonTest
             var expected = "Payroll System";
 
             //Act
-            var actual = StringHandler.InsertSpaces(source);
+            var actual = source.InsertSpaces();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -29,7 +29,7 @@ namespace ACME.CommonTest
             var expected = "Payroll System";
 
             //act
-            var actual = StringHandler.InsertSpaces(source);
+            var actual = source.InsertSpaces();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -44,7 +44,7 @@ namespace ACME.CommonTest
             var expected = "";
 
             //act
-            var actual = StringHandler.InsertSpaces(source);
+            var actual = source.InsertSpaces();
 
             //Assert
             Assert.AreEqual(expected, actual);

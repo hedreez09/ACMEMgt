@@ -8,7 +8,12 @@ namespace ACME.Common1
 {
     public static class StringHandler
     {
-        public static string InsertSpaces(string source)// this is static so as to avoid instantiating it alway sinceits a utility class
+        /// <summary>
+        /// Inserts spaces before each capital in a string  
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static string InsertSpaces(this string source)// this is static so as to avoid instantiating it alway sinceits a utility class
         {
             string result = string.Empty;
             if (!String.IsNullOrEmpty(source))

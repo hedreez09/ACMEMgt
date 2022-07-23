@@ -26,7 +26,7 @@ namespace ACMEMgt
         { 
             get 
             {
-                return StringHandler.InsertSpaces(_productName); 
+                return _productName.InsertSpaces();
             }
             set 
             { 
