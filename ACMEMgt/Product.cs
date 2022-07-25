@@ -3,7 +3,7 @@ using System;
 
 namespace ACMEMgt
 {
-    public class Product : EntityBase
+    public class Product : EntityBase, ILoggable
     {
         public Product()
         {
@@ -37,6 +37,9 @@ namespace ACMEMgt
 
         //using expression body
         public override string ToString() => ProductName;
+
+
+        public string Log() => $"{ProductId}: {ProductName} Detail: {ProductDescription} Status:{EntityState.ToString()}";
 
         //To validate that the specified field are required and not null
         public override bool Validate()

@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using ACME.Common1;
+using System.Collections.Generic;
 
 namespace ACMEMgt
 {
-    public class Customer: EntityBase
+    public class Customer : EntityBase, ILoggable
     {
         public Customer() : this(0)
         {
@@ -40,6 +41,8 @@ namespace ACMEMgt
 
         public override string ToString() => FullName;
 
+        public string Log() => $"{CustomerId} : {FullName} Email : {EmailAddress} Status: {EntityState.ToString()}";
+
         //To validate that the specified field are required and not null
         public override bool Validate()
         {
@@ -49,5 +52,10 @@ namespace ACMEMgt
 
             return isValid;
         }
+
+        //public string Log()
+        //{
+        //    throw new System.NotImplementedException();
+        //}
     }
 }
